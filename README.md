@@ -96,7 +96,6 @@ TWITTER_API_KEY_SECRET=
 TWITTER_ACCESS_TOKEN=
 TWITTER_ACCESS_TOKEN_SECRET=
 ```
-https://github.com/milktoastlab/SolanaNFTBot/blob/main/.env
 
 ### Variable breakdowns
 
