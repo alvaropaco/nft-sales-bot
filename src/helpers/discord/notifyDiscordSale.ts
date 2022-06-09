@@ -1,8 +1,6 @@
 import Discord, {
   MessageActionRow,
-  MessageActionRowComponent,
   MessageEmbed,
-  TextChannel,
 } from "discord.js";
 import { NFTSale, SaleMethod } from "helpers/marketplaces";
 import truncateForAddress from "helpers/truncateForAddress";
