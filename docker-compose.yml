@@ -5,6 +5,6 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - ./src:/solananftbot/src
+      - ./src:/app/src
     env_file:
       - .env
