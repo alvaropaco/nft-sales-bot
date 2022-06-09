@@ -6,13 +6,6 @@ export interface ISubscription {
   mintAddress: string;
 }
 
-interface ITwitterConfig {
-  appKey: string;
-  appSecret: string;
-  accessToken: string;
-  accessSecret: string;
-}
-
 export interface IConfig {
   discordBotToken: string;
   queueConcurrency: number;
