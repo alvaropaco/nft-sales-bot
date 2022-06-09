@@ -30,7 +30,7 @@ export async function fetchWeb3Transactions(
       before: opt?.before,
       until: opt?.until,
     },
-    'finalized'
+    "finalized"
   );
 
   if (signatures) {

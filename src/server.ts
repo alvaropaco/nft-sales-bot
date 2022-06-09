@@ -1,9 +1,9 @@
 import express from "express";
 import dotenv from "dotenv";
-import {Env, loadConfig} from "config";
+import { Env, loadConfig } from "config";
 import logger from "helpers/logger";
-import App from './app'
-import routes from './routes';
+import App from "./app";
+import routes from "./routes";
 import { newConnection } from "./helpers/solana/connection";
 
 const _init = async () => {
@@ -23,7 +23,7 @@ const _init = async () => {
 
     await App({ config, logger, server, web3Conn });
 
-    const host = process.env.HOST || 'localhost';
+    const host = process.env.HOST || "localhost";
     const port = process.env.PORT || 4000;
     server.listen(+port, host, (err?: any) => {
       if (err) throw err;
@@ -34,6 +34,6 @@ const _init = async () => {
     logger.error(error);
     process.exit(1);
   }
-}
+};
 
 _init();

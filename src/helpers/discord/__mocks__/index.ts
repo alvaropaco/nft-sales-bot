@@ -1,4 +1,4 @@
-import Discord, {TextChannel} from "discord.js";
+import Discord, { TextChannel } from "discord.js";
 
 export async function initClient(): Promise<Discord.Client> {
   const discordClient = new Discord.Client({ intents: [] });
@@ -7,7 +7,7 @@ export async function initClient(): Promise<Discord.Client> {
     return { send() {} } as unknown as TextChannel;
   });
   return discordClient;
-};
+}
 
 export async function fetchDiscordChannel(
   client: Discord.Client,

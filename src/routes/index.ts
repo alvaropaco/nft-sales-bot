@@ -1,14 +1,19 @@
 import { Express } from "express";
 import { ParsedConfirmedTransaction, Connection } from "@solana/web3.js";
 import { parseNFTSale } from "helpers/marketplaces";
-import {
-  initClient as initDiscordClient,
-} from "helpers/discord";
-import notifyDiscordSale, { getStatus } from "helpers/discord/notifyDiscordSale";
-import { Config } from '../config';
+import { initClient as initDiscordClient } from "helpers/discord";
+import notifyDiscordSale, {
+  getStatus,
+} from "helpers/discord/notifyDiscordSale";
+import { Config } from "../config";
 import Logger from "helpers/logger/type";
 
-export default (config: Config, logger: Logger, server: Express, web3Conn: Connection) => {
+export default (
+  config: Config,
+  logger: Logger,
+  server: Express,
+  web3Conn: Connection
+) => {
   server.get("/", (req, res) => {
     const { status, health } = config;
     res.send({ status, health, ...getStatus() });

@@ -17,13 +17,13 @@ export interface IConfig {
   discordBotToken: string;
   queueConcurrency: number;
   subscriptions: ISubscription[];
-  status: 'initializing' | 'watching' | 'stopped';
-  health: 'OK' | 'ERROR';
+  status: "initializing" | "watching" | "stopped";
+  health: "OK" | "ERROR";
 }
 
-export type Status = 'initializing' | 'watching' | 'stopped'
+export type Status = "initializing" | "watching" | "stopped";
 
-export type Health = 'OK' | 'ERROR';
+export type Health = "OK" | "ERROR";
 
 export class Config implements IConfig {
   discordBotToken: string;
@@ -32,10 +32,16 @@ export class Config implements IConfig {
   status: Status;
   health: Health;
 
-  constructor(discordBotToken: string, queueConcurrency: number, subscriptions: ISubscription[], status: Status, health: Health){
+  constructor(
+    discordBotToken: string,
+    queueConcurrency: number,
+    subscriptions: ISubscription[],
+    status: Status,
+    health: Health
+  ) {
     this.discordBotToken = discordBotToken;
     this.queueConcurrency = queueConcurrency;
-    this.subscriptions = subscriptions; 
+    this.subscriptions = subscriptions;
     this.status = status;
     this.health = health;
   }
@@ -49,7 +55,7 @@ export class Config implements IConfig {
   }
 
   setStatusWatching() {
-    this.status = 'watching';
+    this.status = "watching";
   }
 }
 
@@ -105,7 +111,7 @@ export function loadConfig(env: Env): MutableConfig {
     env.DISCORD_BOT_TOKEN || "",
     parseInt(env.QUEUE_CONCURRENCY || "2", 10),
     loadSubscriptions(env),
-    'initializing',
-    'OK'
+    "initializing",
+    "OK"
   );
 }

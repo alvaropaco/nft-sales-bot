@@ -1,7 +1,4 @@
-import Discord, {
-  MessageActionRow,
-  MessageEmbed,
-} from "discord.js";
+import Discord, { MessageActionRow, MessageEmbed } from "discord.js";
 import { NFTSale, SaleMethod } from "helpers/marketplaces";
 import truncateForAddress from "helpers/truncateForAddress";
 import logger from "helpers/logger";

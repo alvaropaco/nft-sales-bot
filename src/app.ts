@@ -9,14 +9,20 @@ import Logger from "helpers/logger/type";
 import { Config } from "config";
 
 type AppOpts = {
-  config: Config
-  logger: Logger
-  server: Express
-  web3Conn: Connection
-}
+  config: Config;
+  logger: Logger;
+  server: Express;
+  web3Conn: Connection;
+};
 
 const App = async (opts: AppOpts) => {
-  const { config, config: { subscriptions }, logger, server, web3Conn } = opts;
+  const {
+    config,
+    config: { subscriptions },
+    logger,
+    server,
+    web3Conn,
+  } = opts;
   try {
     const nQueue = queue({
       concurrency: config.queueConcurrency,
@@ -26,7 +32,7 @@ const App = async (opts: AppOpts) => {
     const notifierFactory = await newNotifierFactory(config, nQueue);
 
     if (!subscriptions.length) {
-      logger.warn('No subscriptions');
+      logger.warn("No subscriptions");
       return;
     }
 

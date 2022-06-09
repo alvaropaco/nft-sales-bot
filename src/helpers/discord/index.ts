@@ -5,9 +5,7 @@ myIntents.add(Intents.FLAGS.DIRECT_MESSAGES, Intents.FLAGS.GUILD_MESSAGES);
 
 let client: Discord.Client;
 
-export async function initClient(
-  token: string
-): Promise<Discord.Client> {
+export async function initClient(token: string): Promise<Discord.Client> {
   if (!client) {
     client = new Discord.Client({
       intents: myIntents,

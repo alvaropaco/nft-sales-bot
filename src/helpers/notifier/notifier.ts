@@ -1,4 +1,4 @@
-import {Config} from "config";
+import { Config } from "config";
 import { initClient as initDiscordClient } from "helpers/discord";
 import notifyDiscordSale from "helpers/discord/notifyDiscordSale";
 import { Project } from "workers/notifyNFTSalesWorker";
@@ -35,7 +35,7 @@ function queueNotification(
 }
 
 export async function newNotifierFactory(config: Config, nQueue: queue) {
-  let discordClient:Discord.Client;
+  let discordClient: Discord.Client;
   if (config.discordBotToken) {
     discordClient = await initDiscordClient(config.discordBotToken);
   }
