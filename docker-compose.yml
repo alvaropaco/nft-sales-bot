@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  bot:
+    build: .
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./src:/solananftbot/src
+    env_file:
+      - .env
