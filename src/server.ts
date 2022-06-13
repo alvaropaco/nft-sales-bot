@@ -21,7 +21,7 @@ const _init = async () => {
 
     routes(config, logger, server, web3Conn);
 
-    await App({ config, logger, server, web3Conn });
+    // await App({ config, logger, server, web3Conn });
 
     const host = process.env.HOST || "localhost";
     const port = process.env.PORT || 4000;
